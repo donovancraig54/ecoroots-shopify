@@ -1,0 +1,153 @@
+/* Small additions for things the original page renders with third-party apps (Judge.me stars, variant picker). */
+
+/* Slideshow: the theme's JS measures slide heights and sets them inline. Instead, keep the
+   placeholder image in flow (invisible) as the height sizer and lay the slides over it. */
+.hero-flex {
+  position: relative;
+}
+.template-index .slideshow--transition-slide .slide:first-of-type,
+.template-index .slide.active {
+  opacity: 1;
+}
+
+/* desktop: text is overlaid on the image */
+@media (min-width: 720px) {
+  .template-index .slideshow--loaded .placeholder-image {
+    display: block;
+    visibility: hidden;
+  }
+  .template-index .hero-flex .slideshow--viewport {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .template-index .slideshow > .prev,
+  .template-index .slideshow > .next {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .template-index .hero-flex .slide .image-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+  }
+  .template-index .slide .image-wrap img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* mobile: image on top, text stacked underneath (theme's mobile layout) */
+@media (max-width: 719px) {
+  .template-index .hero-flex .slideshow--viewport {
+    width: 100%;
+  }
+  .template-index .hero-flex .slide {
+    height: auto;
+  }
+  .template-index .hero-flex .slide .image-wrap {
+    height: auto;
+  }
+  .template-index .hero-flex .slide .image-wrap img {
+    position: static;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+    transform: none;
+  }
+  .template-index .slideshow > .prev,
+  .template-index .slideshow > .next {
+    top: 22vw;
+    transform: translateY(-50%);
+  }
+}
+
+.eco-stars {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0;
+  font-size: 13px;
+  color: #63605e;
+}
+.product-details .eco-stars {
+  justify-content: center;
+}
+.eco-star {
+  color: #d8d0c8;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.eco-star.on {
+  color: #8cc63f;
+}
+
+.eco-variants {
+  width: 100%;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.eco-variants-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.eco-variants-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.eco-variant {
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #8b5e3b;
+}
+.eco-variant.active {
+  color: #fff;
+  background: #8b5e3b;
+}
+.eco-variant:disabled {
+  opacity: 0.4;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+/* the theme's thumbnail pager highlights via JS; mirror that state */
+.product-images .pager .wrap.thumb {
+  cursor: pointer;
+}
+.product-images .pager .wrap.thumb.active .overlay {
+  opacity: 1;
+}
+
+/* drawer close button reset */
+.cart-mini-header-close {
+  background: none;
+  border: 0;
+}
+.cart-mini-item-image img {
+  width: 100%;
+}
+/* the original custom template hides this title and shows it in a bundle banner instead */
+.new-product-template h1.title {
+  display: block;
+  font-size: 30px;
+  text-align: center;
+}
+.description.rte {
+  margin-top: 20px;
+  text-align: left;
+}

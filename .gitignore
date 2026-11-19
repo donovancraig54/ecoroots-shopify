@@ -1,0 +1,4 @@
+node_modules/
+dist/
+# raw static mirror (~200MB) – regenerate with npm run mirror
+site/
