@@ -2,7 +2,7 @@
 
 A responsive React frontend for the live EcoRoots storefront at [ecoroots.us](https://ecoroots.us/).
 
-This project is a real, working implementation of the EcoRoots shopping experience. It recreates the original Shopify theme structure and visual presentation, with React components and modern frontend interactions replacing the original Shopify/Liquid and jQuery behaviour.
+This project is working implementation of the EcoRoots shopping experience. It recreates the original Shopify theme structure and visual presentation, with React components and modern frontend interactions replacing the original Shopify/Liquid and jQuery behaviour.
 
 > **Frontend prototype:** This project does not process payments, create orders, authenticate customers, or submit newsletter subscriptions to a live backend.
 
